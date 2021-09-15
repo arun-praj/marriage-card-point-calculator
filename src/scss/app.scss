@@ -1,0 +1,114 @@
+.wrapper {
+   width: 100vw;
+   height: 100vh;
+   padding: 0 2rem;
+   background-color: #e7717d;
+   overflow-y: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+}
+.container {
+   background-color: #fff;
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -230px);
+   max-width: 420px;
+   min-width: 400px;
+   // flex-grow: 1;
+   // height: 55.5rem;
+   // min-height: 50vh;
+   //    margin: 2%;
+   font-size: 1.6rem;
+
+   border-radius: 10px;
+   // padding: 3rem;
+
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+   text-align: center;
+   &__heading {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      padding: 2.5rem 2.5rem 1rem 2.5rem;
+      // border-bottom: 3px solid black;
+      &2 {
+         font-size: 1.8rem;
+         font-weight: 700;
+         // margin-bottom: 1.6rem;
+      }
+   }
+   &__body {
+      padding: 1rem 6rem 2.4rem 6rem;
+   }
+   &__form {
+      &__div {
+         position: relative;
+         height: 48px;
+         margin: 1.2rem 0;
+         &__input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 1.6rem;
+            outline: none;
+            border-radius: 0.5rem;
+            padding: 0.7rem 1.2rem;
+            border: none;
+            box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+         }
+      }
+   }
+   &__input {
+      width: 100%;
+   }
+}
+
+.radio-btn {
+   padding: 3rem;
+   &__input {
+      opacity: 0;
+   }
+   &__label {
+      &:hover {
+         cursor: pointer;
+         box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 0px 3px;
+      }
+      padding: 1rem 1.4rem;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      border-radius: 0.3rem;
+   }
+   .radio--selected {
+      // color: red;
+      box-shadow: rgba(3, 102, 214, 0.5) 0px 0px 0px 3px;
+   }
+}
+
+.avatar {
+   padding: 1.2rem 0;
+}
+.avatar__image {
+   border-radius: 50%;
+   border: 2px solid black;
+   padding: 2px;
+   &:not(:last-child) {
+      margin-right: 1rem;
+   }
+}
+.submit__button {
+   border: none;
+   background: transparent;
+}
+@media all and (max-width: 768px) {
+   .container {
+      transform: translate(-50%, -300px);
+   }
+}
+@media all and (max-width: 768px) {
+   html {
+      font-size: 100%;
+   }
+}
