@@ -1,0 +1,34 @@
+.body {
+   background-color: #4158d0;
+   background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+   min-width: 100vw;
+   min-height: 100vh;
+   position: relative;
+}
+.container {
+   width: 90%;
+}
+@media all and (min-width: 700px) {
+   .container {
+      width: 50%;
+   }
+}
+
+@media all and (min-width: 500px) {
+   .container {
+      width: 340px;
+   }
+}
+
+.th--left {
+   text-align: left;
+   font-size: 1rem;
+}
+
+tr {
+   text-align: center;
+}
+
+.disable_input {
+   opacity: 0.3;
+}
