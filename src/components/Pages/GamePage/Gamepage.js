@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -21,25 +21,6 @@ const Gamepage = () => {
    const [seenSequenceId, setSeenSequenceId] = useState([])
    const [gamerPoint, setGamerPoint] = useState([])
 
-   useEffect(() => {
-      let player_sum_points = []
-
-      for (let i = 0; i < players.length; i++) {
-         let sum = 0
-         let player_id
-         history?.forEach((history_item) => {
-            if (players[i].player_name === history_item.player_name) {
-               sum = sum + history_item.points
-               player_id = history_item.id
-            }
-         })
-         console.log(player_id, sum)
-         player_sum_points.push({
-            id: player_id,
-            sum,
-         })
-      }
-   }, [history, players])
    const handleGamerRadio = (id) => {
       setGamerId(id)
       setSeenSequenceId((prev) => {
@@ -79,6 +60,19 @@ const Gamepage = () => {
       if (!gamerId) {
          return
       }
+
+      let invalid_input
+      for (var i = 0; i < seenSequenceId.length; i++) {
+         if (gamerPoint[seenSequenceId[i]] === undefined || gamerPoint[seenSequenceId[i]] === '') {
+            console.log('asdf')
+            invalid_input = true
+         }
+      }
+      console.log(invalid_input)
+      if (invalid_input) {
+         return
+      }
+
       let result = []
       let sum = 0
       let total_point = seenSequenceId.map((id) => {
@@ -145,9 +139,7 @@ const Gamepage = () => {
          }
       })
       unique_result = [...new Map(unique_result.map((item) => [item['id'], item])).values()]
-
       dispatch(add_game_result(unique_result))
-      console.log(unique_result)
    }
    return (
       <>
@@ -282,7 +274,6 @@ const Gamepage = () => {
                                  const a = history?.map((item) => {
                                     const i = item.map((history_player) => {
                                        if (history_player.player_name === player.player_name) {
-                                          // console.log(history_player.points)
                                           sum = sum + parseFloat(history_player.points)
                                           return (
                                              <span>
