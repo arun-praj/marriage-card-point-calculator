@@ -8,7 +8,7 @@ import * as style from '@dicebear/avatars-bottts-sprites'
 import Container from 'components/hoc/Container'
 
 import { change_gamePlaying } from 'app/slices/gameOptionsSlice'
-import { add_game_result } from 'app/slices/gameHistory'
+import { add_game_result, reset_history } from 'app/slices/gameHistory'
 
 const Gamepage = () => {
    const dispatch = useDispatch()
@@ -359,23 +359,14 @@ const Gamepage = () => {
                            </tr>
                         </tbody>
                         <tbody>
-                           <tr>
-                              {/* {players?.map((player) => {
-                                 const a = history?.map((item) => {
-                                    const i = item.map((history_player) => {
-                                       if (history_player.player_name === player.player_name) {
-                                          return {}
-                                       }
-                                    })
-                                    return i
-                                 })
-                                 return a
-                              })} */}
-                           </tr>
+                           <tr></tr>
                         </tbody>
                      </table>
                   </div>
                </div>
+            </div>
+            <div>
+               <button onClick={() => dispatch(reset_history())}>reset_history</button>
             </div>
          </Container>
       </>

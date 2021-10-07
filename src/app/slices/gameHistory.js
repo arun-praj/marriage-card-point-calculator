@@ -10,10 +10,13 @@ const gameHistory = createSlice({
       add_game_result: (state, action) => {
          state.history.push(action.payload)
       },
+      reset_history: (state, _) => {
+         state.history = []
+      },
    },
 })
 
 const { actions, reducer } = gameHistory
 
-export const { add_game_result } = actions
+export const { add_game_result, reset_history } = actions
 export default reducer
