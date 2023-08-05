@@ -13,11 +13,13 @@ jobs:
         runs-on: ubuntu-linux
         steps:
             - uses: actions/checkout@v2
+            - name: say-hello 
               run: echo "hello world"
               shell: bash
     bye:
         runs-on: ubuntu-linux
         steps:
             - uses: actions/checkout@v2
+            - name: say-bye
               run: echo "Bye Bye world"
               shell: bash
